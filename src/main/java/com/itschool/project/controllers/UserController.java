@@ -3,9 +3,12 @@ package com.itschool.project.controllers;
 import com.itschool.project.models.User;
 import com.itschool.project.services.UserService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -18,7 +21,11 @@ public class UserController {
 
     @PostMapping("/api/users")
     public ResponseEntity<User> createUser(@RequestBody User user) {
-
         return ResponseEntity.ok(userService.createUser(user));
+    }
+
+    @GetMapping("/api/users")
+    public ResponseEntity<List<User>> createUser() {
+        return ResponseEntity.ok(userService.getUsers());
     }
 }
