@@ -34,7 +34,7 @@ public class WeatherServiceImpl implements WeatherService {
         LocalDateTime localDateTime = LocalDateTime.parse(jsonNode.get("current").get("last_updated").asText(), formatter);
 
         Weather weatherResponse = new Weather();
-        weatherResponse.setCity(jsonNode.get("location").get("name"). asText());
+        weatherResponse.setCity(jsonNode.get("location").get("name").asText());
         weatherResponse.setDescription(jsonNode.get("current").get("condition").get("text").asText());
         weatherResponse.setLastUpdate(localDateTime);
 
