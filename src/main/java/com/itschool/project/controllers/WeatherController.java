@@ -25,7 +25,8 @@ public class WeatherController {
         // Current weather description
         // last time weather information was updated
 
+
         // .../api/weather?city=London
         return ResponseEntity.ok(weatherService.getCityWeather(city));
     }
- }
+}
